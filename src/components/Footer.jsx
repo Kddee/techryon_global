@@ -4,7 +4,7 @@ import { Cpu, MapPin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const location = useLocation();
-  const isConferences = location.pathname.startsWith('/conferences');
+  const isEvents = location.pathname.startsWith('/events');
 
   const beige = {
     bg: '#ede8de',
@@ -24,15 +24,22 @@ const Footer = () => {
     divider: 'rgba(255,255,255,0.06)',
   };
 
-  const t = isConferences ? beige : dark;
+  const amber = {
+    bg: 'rgba(255,255,255,0.02)',
+    border: 'rgba(210,170,100,0.15)',
+    text: 'var(--text-primary)',
+    subtle: '#9090a0',
+    accent: '#d2aa64',
+    divider: 'rgba(210,170,100,0.10)',
+  };
+
+  const t = isEvents ? amber : dark;
 
   return (
     <footer
       style={{
         background: t.bg,
         borderTop: `1px solid ${t.border}`,
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
         position: 'relative',
         zIndex: 20,
       }}
@@ -42,6 +49,8 @@ const Footer = () => {
         style={{
           paddingTop: '3rem',
           paddingBottom: '2rem',
+          paddingLeft: '2.5rem',
+          paddingRight: '2.5rem',
           display: 'flex',
           flexDirection: 'column',
           gap: '2.5rem',

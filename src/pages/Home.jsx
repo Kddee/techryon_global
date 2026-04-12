@@ -4,28 +4,21 @@ import { ArrowRight, Terminal, Cpu, Mic2 } from 'lucide-react';
 
 const Home = () => {
   return (
-    <div className="animate-fade-in flex-grow flex flex-col items-center justify-center min-h-screen py-16 text-center relative overflow-hidden" style={{ backgroundColor: '#1c1c1f' }}>
+    <div className="animate-fade-in flex-grow flex flex-col items-center justify-center pb-16 text-center w-full">
 
-      {/* Liquid Plasma Background Orbs */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Blue/Cyan orb — sits behind IT Services card */}
-        <div className="absolute top-[15%] left-[5%] w-[45vw] h-[45vw] rounded-full blur-[130px]" style={{ background: 'rgba(0,180,255,0.12)' }}></div>
-        {/* Purple depth orb — centre */}
-        <div className="absolute top-[30%] left-[30%] w-[40vw] h-[40vw] rounded-full blur-[150px]" style={{ background: 'rgba(120,80,200,0.09)' }}></div>
-        {/* Warm amber orb — sits behind Conferences card */}
-        <div className="absolute top-[15%] right-[5%] w-[45vw] h-[45vw] rounded-full blur-[130px]" style={{ background: 'rgba(210,170,100,0.10)' }}></div>
-      </div>
-
-      <div className="container relative z-10 flex flex-col items-center max-w-5xl">
+      <div
+        className="container flex flex-col items-center"
+        style={{ maxWidth: '1000px', paddingLeft: '2.5rem', paddingRight: '2.5rem' }}
+      >
 
         {/* Central Logo, Name and Typography */}
         <div className="flex flex-col items-center mb-16">
           <div className="p-5 rounded-2xl bg-white/10 shadow-[0_0_30px_rgba(0,240,255,0.3)] mb-8">
-            <Cpu className="text-cyan-400" size={64} />
+            <Cpu className="text-accent" size={64} />
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold title-glow mb-10 tracking-widest uppercase">
-            Techryon<span className="text-cyan-400">Global</span>
+            Techryon<span className="text-accent">Global</span>
           </h1>
 
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl">
@@ -45,9 +38,7 @@ const Home = () => {
             to="/services"
             className="group block text-left relative overflow-hidden transition-all duration-500"
             style={{
-              background: 'rgba(255,255,255,0.03)',
-              backdropFilter: 'blur(28px)',
-              WebkitBackdropFilter: 'blur(28px)',
+              background: 'rgba(255,255,255,0.04)',
               border: '1px solid rgba(0,240,255,0.15)',
               borderRadius: '1.5rem',
               padding: '2.5rem',
@@ -68,12 +59,10 @@ const Home = () => {
 
           {/* Conferences — Warm beige/amber glass glow */}
           <Link
-            to="/conferences"
+            to="/events"
             className="group block text-left relative overflow-hidden transition-all duration-500"
             style={{
-              background: 'rgba(255,255,255,0.03)',
-              backdropFilter: 'blur(28px)',
-              WebkitBackdropFilter: 'blur(28px)',
+              background: 'rgba(255,255,255,0.04)',
               border: '1px solid rgba(210,170,100,0.2)',
               borderRadius: '1.5rem',
               padding: '2.5rem',
@@ -83,12 +72,12 @@ const Home = () => {
             onMouseLeave={e => e.currentTarget.style.boxShadow = 'inset 0 0 20px rgba(210,170,100,0.05), 0 0 40px rgba(180,140,80,0.08)'}
           >
             <Mic2 size={36} className="mb-6" style={{ color: '#d2aa64' }} />
-            <h3 className="text-3xl font-bold mb-4">Academic Conferences</h3>
+            <h3 className="text-3xl font-bold mb-4">Technical Events</h3>
             <p className="text-secondary mb-8 text-lg">
-              We host world-class technological gatherings bridging academia and industry.
+              We host world-class technological gatherings bridging the industry.
             </p>
             <div className="flex items-center gap-2 font-semibold group-hover:opacity-80 pt-2 transition-opacity" style={{ color: '#d2aa64' }}>
-              Discover Conferences <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+              Discover Events <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
             </div>
           </Link>
 

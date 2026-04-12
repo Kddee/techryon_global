@@ -231,19 +231,20 @@ button {
 .font-semibold { font-weight: 600; }
 .text-secondary { color: var(--text-secondary); }
 .text-accent { color: var(--accent-primary); }
+.text-cyan-400 { color: #00f0ff; }
+.text-cyan-300 { color: #a5f3fc; }
+.text-cyan-500 { color: #06b6d4; }
 
 /* Custom components */
 .service-card {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.03), 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
 

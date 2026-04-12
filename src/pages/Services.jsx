@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import { Shield, Globe2, Database, Cpu, Cloud, ArrowRight, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Shield, Globe2, Database, Cpu, Cloud, ArrowRight } from 'lucide-react';
 
 const Services = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const servicesList = [
     {
       title: "Web Development",
       description: "Scalable, high-performance web applications built with modern frameworks to deliver exceptional user experiences.",
       icon: <Globe2 size={24} />,
-      color: "text-cyan-400",
+      color: "text-accent",
       bgHover: "hover:border-cyan-400/50"
     },
     {
@@ -43,88 +41,19 @@ const Services = () => {
   ];
 
   return (
-    <div className="animate-fade-in pb-24 relative overflow-hidden min-h-screen">
+    <div className="animate-fade-in pb-24 relative w-full">
       
-      {/* Liquid Plasma Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[10%] left-[20%] w-[35vw] h-[35vw] bg-cyan-600/30 rounded-full blur-[140px] mix-blend-screen"></div>
-        <div className="absolute bottom-[20%] right-[10%] w-[40vw] h-[40vw] bg-purple-700/20 rounded-full blur-[150px] mix-blend-screen"></div>
-        <div className="absolute top-[40%] left-[60%] w-[30vw] h-[30vw] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen"></div>
-      </div>
+      {/* Main Content */}
+      <div
+        className="container relative z-10"
+        style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}
+      >
 
-      {/* Main Content — header + grid share same container so columns align */}
-      <div className="container relative z-10" style={{ paddingTop: '1.5rem' }}>
-
-        {/* Header row — logo left, hamburger right, both aligned to grid column edges */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
-          
-          {/* Left: Logo + Page Title */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <Cpu className="text-cyan-400" size={30} />
-              <span className="text-2xl font-bold title-glow uppercase tracking-widest">
-                Techryon<span className="text-cyan-400">Global</span>
-              </span>
-            </Link>
-            <h1 className="text-3xl font-bold text-secondary tracking-wide">
-              Our Services
-            </h1>
-          </div>
-
-          {/* Right: Hamburger dropdown */}
-          <div style={{ position: 'relative', marginRight: '1rem', marginTop: '0.5rem' }}>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex items-center justify-center text-secondary hover:text-cyan-400 transition-colors focus:outline-none"
-            >
-              <div className="relative w-8 h-8 flex items-center justify-center">
-                <Menu
-                  size={28}
-                  style={{
-                    position: 'absolute',
-                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                    opacity: isMenuOpen ? 0 : 1,
-                    transform: isMenuOpen ? 'rotate(90deg) scale(0.5)' : 'rotate(0) scale(1)',
-                  }}
-                />
-                <X
-                  size={28}
-                  style={{
-                    position: 'absolute',
-                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                    opacity: isMenuOpen ? 1 : 0,
-                    transform: isMenuOpen ? 'rotate(0) scale(1)' : 'rotate(-90deg) scale(0.5)',
-                    color: '#00f0ff'
-                  }}
-                />
-              </div>
-            </button>
-
-            {/* Dropdown */}
-            <div
-              className="glass-panel flex flex-col items-end gap-5 border border-cyan-900/50"
-              style={{
-                position: 'absolute',
-                right: 0,
-                top: '2.5rem',
-                width: '13rem',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                opacity: isMenuOpen ? 1 : 0,
-                visibility: isMenuOpen ? 'visible' : 'hidden',
-                transform: isMenuOpen ? 'translateY(0) scale(1)' : 'translateY(-12px) scale(0.95)',
-                transformOrigin: 'top right',
-                padding: '1.5rem',
-                zIndex: 50,
-                boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-                pointerEvents: isMenuOpen ? 'auto' : 'none'
-              }}
-            >
-              <Link to="/" className="text-right font-semibold text-sm hover:text-cyan-400 transition-colors uppercase tracking-wider block">Home</Link>
-              <Link to="/conferences" className="text-right font-semibold text-sm hover:text-cyan-400 transition-colors uppercase tracking-wider block">Conferences</Link>
-              <a href="#about" className="text-right font-semibold text-sm hover:text-cyan-400 transition-colors uppercase tracking-wider block">About Us</a>
-              <a href="#contact" className="text-right font-semibold text-sm hover:text-cyan-400 transition-colors uppercase tracking-wider block">Contact</a>
-            </div>
-          </div>
+        {/* Page Title */}
+        <div style={{ marginBottom: '3rem' }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-secondary tracking-wide">
+            Our Services
+          </h1>
         </div>
 
         {/* Services Grid */}

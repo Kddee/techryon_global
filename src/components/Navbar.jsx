@@ -1,38 +1,113 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Cpu } from 'lucide-react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Cpu, Menu, X } from 'lucide-react';
 
-const Navbar = () => {
-  const location = useLocation();
-  const isLight = location.pathname.startsWith('/conferences');
-
-  let heading = "Engineering the Future of Technology";
-  let subheading = "Techryon Global bridges the gap between complex IT infrastructure and seamless business execution.";
-
-  if (location.pathname === '/services') {
-    heading = "Our IT Expertise";
-    subheading = "Leveraging cutting-edge technologies to architect solutions that drive innovation.";
-  } else if (location.pathname === '/conferences') {
-    heading = "Techryon Conferences";
-    subheading = "Where academic rigor meets industry innovation.";
-  }
+const Navbar = ({ isLight = false, accentColor = '#00f0ff' }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="glass-nav fixed top-0 w-full z-50 transition-colors duration-500">
-      <div className="container flex items-center py-4 gap-4 md:gap-8">
-        <Link to="/" className="flex items-center gap-2 group shrink-0">
-          <div className={`p-2 rounded-lg transition-all ${isLight ? 'bg-slate-200' : 'bg-white/10 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.5)]'}`}>
-            <Cpu className={isLight ? "text-slate-800" : "text-cyan-400"} size={24} />
+    <nav
+      style={{
+        width: '100%',
+      }}
+    >
+      <div
+        className="container flex items-center justify-between"
+        style={{ paddingTop: '1.25rem', paddingBottom: '1rem', paddingLeft: '2.5rem', paddingRight: '2.5rem' }}
+      >
+        {/* Left: Logo */}
+        <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div className={`p-1.5 rounded-lg transition-all ${isLight ? 'bg-slate-200' : 'bg-white/5'}`}>
+            <Cpu style={{ color: accentColor }} size={28} />
           </div>
-          <span className={`text-xl font-bold ${!isLight && 'title-glow'}`}>
-            Techryon<span className={isLight ? "text-slate-500" : "text-cyan-400"}>Global</span>
+          <span className={`text-2xl font-bold tracking-widest uppercase ${!isLight ? 'text-[#e8e8ee] title-glow' : 'text-slate-900'}`}>
+            Techryon<span style={{ color: accentColor }}>Global</span>
           </span>
         </Link>
         
-        {/* Dynamic header and subheading shifted here */}
-        <div className="hidden md:flex flex-col justify-center border-l border-white/10 pl-6 h-full">
-          <h1 className={`text-lg md:text-xl font-bold ${!isLight ? 'text-white title-glow' : 'text-slate-900'}`}>{heading}</h1>
-          <p className={`text-xs md:text-sm ${!isLight ? 'text-secondary' : 'text-slate-500'} max-w-xl truncate`}>{subheading}</p>
+        {/* Right: Hamburger dropdown */}
+        <div style={{ position: 'relative' }}>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            className={`flex items-center justify-center transition-colors focus:outline-none ${isLight ? 'text-slate-600 hover:text-slate-900' : 'text-[#e8e8ee]'}`}
+          >
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <Menu
+                size={28}
+                color={isLight ? '#475569' : '#e8e8ee'}
+                style={{
+                  position: 'absolute',
+                  transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                  opacity: isMenuOpen ? 0 : 1,
+                  transform: isMenuOpen ? 'rotate(90deg) scale(0.5)' : 'rotate(0) scale(1)',
+                }}
+              />
+              <X
+                size={28}
+                style={{
+                  position: 'absolute',
+                  transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                  opacity: isMenuOpen ? 1 : 0,
+                  transform: isMenuOpen ? 'rotate(0) scale(1)' : 'rotate(-90deg) scale(0.5)',
+                  color: accentColor
+                }}
+              />
+            </div>
+          </button>
+
+          {/* Dropdown Menu */}
+          <div
+            className={`glass-panel flex flex-col items-end gap-5 ${isLight ? 'bg-white/90 border-slate-200' : 'bg-white/5 border-white/10'}`}
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: '3rem',
+              width: '13rem',
+              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+              opacity: isMenuOpen ? 1 : 0,
+              visibility: isMenuOpen ? 'visible' : 'hidden',
+              transform: isMenuOpen ? 'translateY(0) scale(1)' : 'translateY(-12px) scale(0.95)',
+              transformOrigin: 'top right',
+              padding: '1.5rem',
+              zIndex: 50,
+              boxShadow: isLight ? '0 10px 30px rgba(0,0,0,0.1)' : '0 20px 50px rgba(0,0,0,0.6)',
+              pointerEvents: isMenuOpen ? 'auto' : 'none'
+            }}
+          >
+            {[
+              { label: 'Home', to: '/' },
+              { label: 'Services', to: '/services' },
+              { label: 'Events', to: '/events' }
+            ].map(({ label, to }) => (
+              <Link 
+                key={label} 
+                to={to}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-right font-semibold text-sm uppercase tracking-wider block transition-colors ${isLight ? 'text-slate-700' : 'text-[#e8e8ee]'}`}
+                onMouseEnter={e => e.currentTarget.style.color = accentColor}
+                onMouseLeave={e => e.currentTarget.style.color = isLight ? '#334155' : '#e8e8ee'}
+              >
+                {label}
+              </Link>
+            ))}
+            {[
+              { label: 'About Us', href: '#about' },
+              { label: 'Contact', href: '#contact' }
+            ].map(({ label, href }) => (
+              <a 
+                key={label} 
+                href={href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-right font-semibold text-sm uppercase tracking-wider block transition-colors ${isLight ? 'text-slate-700' : 'text-[#e8e8ee]'}`}
+                onMouseEnter={e => e.currentTarget.style.color = accentColor}
+                onMouseLeave={e => e.currentTarget.style.color = isLight ? '#334155' : '#e8e8ee'}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
