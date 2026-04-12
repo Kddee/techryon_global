@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Cpu, MapPin, Mail } from 'lucide-react';
+import { Cpu, Mail } from 'lucide-react';
 
 const Footer = () => {
   const location = useLocation();
@@ -57,15 +57,9 @@ const Footer = () => {
         }}
       >
         {/* Top row */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '2rem',
-          }}
-        >
-          {/* Brand */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div>
+          {/* Brand & Social */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity" style={{ width: 'fit-content' }}>
               <Cpu size={26} style={{ color: t.accent }} />
               <span
@@ -78,53 +72,51 @@ const Footer = () => {
             <p style={{ fontSize: '0.9rem', color: t.subtle, lineHeight: '1.6', maxWidth: '260px' }}>
               Engineering the future of technology — bridging complex IT infrastructure and seamless business execution.
             </p>
-            {/* Social Links */}
-            <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{ color: t.subtle, transition: 'color 0.2s' }}
+            {/* Social & Contact Links */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1.25rem', marginTop: '0.75rem' }}>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: t.subtle, transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
                 onMouseEnter={e => e.currentTarget.style.color = t.accent}
                 onMouseLeave={e => e.currentTarget.style.color = t.subtle}
                 aria-label="LinkedIn"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </a>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{ color: t.subtle, transition: 'color 0.2s' }}
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: t.subtle, transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
                 onMouseEnter={e => e.currentTarget.style.color = t.accent}
                 onMouseLeave={e => e.currentTarget.style.color = t.subtle}
                 aria-label="X (Twitter)"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z" />
                 </svg>
               </a>
-            </div>
-          </div>
 
-          {/* Contact info */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <h4 className="font-bold uppercase tracking-widest" style={{ fontSize: '0.75rem', color: t.subtle }}>Contact</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-                <MapPin size={15} style={{ color: t.accent, marginTop: '2px', flexShrink: 0 }} />
-                <span style={{ fontSize: '0.9rem', color: t.subtle, lineHeight: '1.5' }}>
-                  1 Example Street,<br />Innovation District, TX 00000
-                </span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                <Mail size={15} style={{ color: t.accent, flexShrink: 0 }} />
-                <span style={{ fontSize: '0.9rem', color: t.subtle }}>example@techryonglobal.com</span>
-              </div>
+              <a
+                href="mailto:example@techryonglobal.com"
+                style={{
+                  color: t.subtle,
+                  transition: 'color 0.2s',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = t.accent}
+                onMouseLeave={e => e.currentTarget.style.color = t.subtle}
+                aria-label="Email Us"
+              >
+                <Mail size={26} />
+              </a>
             </div>
           </div>
         </div>
