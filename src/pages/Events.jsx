@@ -509,7 +509,7 @@ const EventCard = ({ ev, visual, idx, IconComp, catStyle, onLearnMore }) => {
       </div>
 
       {/* Learn more */}
-      <div style={{ marginTop: '0.25rem' }}>
+      <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
         <button
           onClick={onLearnMore}
           style={{

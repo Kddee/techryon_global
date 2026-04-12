@@ -36,7 +36,7 @@ const Home = () => {
           {/* IT Services — Cyan/Blue glass glow */}
           <Link
             to="/services"
-            className="group block text-left relative overflow-hidden transition-all duration-500"
+            className="group flex flex-col text-left relative overflow-hidden transition-all duration-500 h-full"
             style={{
               background: 'rgba(255,255,255,0.04)',
               border: '1px solid rgba(0,240,255,0.15)',
@@ -52,7 +52,7 @@ const Home = () => {
             <p className="text-secondary mb-8 text-lg">
               Enterprise-grade software development, artificial intelligence implementation, and secure architectures.
             </p>
-            <div className="flex items-center gap-2 font-semibold group-hover:text-cyan-300 pt-2" style={{ color: '#00f0ff' }}>
+            <div className="flex items-center gap-2 font-semibold group-hover:text-cyan-300 pt-2" style={{ color: '#00f0ff', marginTop: 'auto' }}>
               Explore IT Services <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
             </div>
           </Link>
@@ -60,7 +60,7 @@ const Home = () => {
           {/* Conferences — Warm beige/amber glass glow */}
           <Link
             to="/events"
-            className="group block text-left relative overflow-hidden transition-all duration-500"
+            className="group flex flex-col text-left relative overflow-hidden transition-all duration-500 h-full"
             style={{
               background: 'rgba(255,255,255,0.04)',
               border: '1px solid rgba(210,170,100,0.2)',
@@ -76,7 +76,7 @@ const Home = () => {
             <p className="text-secondary mb-8 text-lg">
               We host world-class technological gatherings bridging the industry.
             </p>
-            <div className="flex items-center gap-2 font-semibold group-hover:opacity-80 pt-2 transition-opacity" style={{ color: '#d2aa64' }}>
+            <div className="flex items-center gap-2 font-semibold group-hover:opacity-80 pt-2 transition-opacity" style={{ color: '#d2aa64', marginTop: 'auto' }}>
               Discover Events <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
             </div>
           </Link>
