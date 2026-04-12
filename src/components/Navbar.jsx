@@ -78,8 +78,10 @@ const Navbar = ({ isLight = false, accentColor = '#00f0ff' }) => {
           >
             {[
               { label: 'Home', to: '/' },
+              { label: 'About Us', to: '/about' },
               { label: 'Services', to: '/services' },
-              { label: 'Events', to: '/events' }
+              { label: 'Events', to: '/events' },
+              { label: 'Contact', to: '/contact' }
             ].map(({ label, to }) => (
               <Link 
                 key={label} 
@@ -92,10 +94,8 @@ const Navbar = ({ isLight = false, accentColor = '#00f0ff' }) => {
                 {label}
               </Link>
             ))}
-            {[
-              { label: 'About Us', href: '#about' },
-              { label: 'Contact', href: '#contact' }
-            ].map(({ label, href }) => (
+            {/* Empty array so we don't map anchor links here anymore */}
+            {[].map(({ label, href }) => (
               <a 
                 key={label} 
                 href={href}
