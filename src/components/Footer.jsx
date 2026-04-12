@@ -78,6 +78,37 @@ const Footer = () => {
             <p style={{ fontSize: '0.9rem', color: t.subtle, lineHeight: '1.6', maxWidth: '260px' }}>
               Engineering the future of technology — bridging complex IT infrastructure and seamless business execution.
             </p>
+            {/* Social Links */}
+            <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ color: t.subtle, transition: 'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color = t.accent}
+                onMouseLeave={e => e.currentTarget.style.color = t.subtle}
+                aria-label="LinkedIn"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ color: t.subtle, transition: 'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color = t.accent}
+                onMouseLeave={e => e.currentTarget.style.color = t.subtle}
+                aria-label="X (Twitter)"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z"/>
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Contact info */}

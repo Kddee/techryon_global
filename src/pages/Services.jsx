@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Globe2, Database, Cpu, Cloud, ArrowRight, X, Layers, Zap, Code2, ChevronRight, Tag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 
 /* ─── Visual Mapping ──────────────────────────────────────── */
@@ -308,12 +309,12 @@ const Services = () => {
             ))}
 
             {/* Contact CTA Card — no drawer, links to contact */}
-            <div className="service-card group cursor-pointer hover:border-white/50 bg-gradient-to-br from-white/5 to-white/0 flex flex-col justify-center items-center text-center">
+            <div className="service-card group hover:border-white/20 bg-gradient-to-br from-white/5 to-white/0 flex flex-col justify-center items-center text-center">
               <h3 className="text-2xl font-bold mb-4">Ready to start?</h3>
-              <p className="text-secondary mb-6">Let's discuss how we can transform your technological landscape.</p>
-              <button className="btn btn-outline border-white/20 hover:bg-white/10 w-full">
+              <p className="text-secondary mb-8">Let's discuss how we can transform your technological landscape.</p>
+              <Link to="/contact" className="btn btn-outline border-white/20 hover:bg-white/10 w-full" style={{ marginTop: '1rem' }}>
                 Contact Us <ArrowRight size={18} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

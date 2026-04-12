@@ -59,21 +59,24 @@ const Navbar = ({ isLight = false, accentColor = '#00f0ff' }) => {
 
           {/* Dropdown Menu */}
           <div
-            className={`glass-panel flex flex-col items-end gap-5 ${isLight ? 'bg-white/90 border-slate-200' : 'bg-white/5 border-white/10'}`}
+            className={`glass-panel flex flex-col items-center gap-5 ${isLight ? 'bg-white/95 border-slate-200' : 'bg-[#0a0a0f]/90 border-white/10'}`}
             style={{
               position: 'absolute',
               right: 0,
               top: '3rem',
-              width: '13rem',
+              width: 'auto',
+              minWidth: 'max-content',
               transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
               opacity: isMenuOpen ? 1 : 0,
               visibility: isMenuOpen ? 'visible' : 'hidden',
               transform: isMenuOpen ? 'translateY(0) scale(1)' : 'translateY(-12px) scale(0.95)',
               transformOrigin: 'top right',
-              padding: '1.5rem',
+              padding: '1.5rem 2.5rem',
               zIndex: 50,
-              boxShadow: isLight ? '0 10px 30px rgba(0,0,0,0.1)' : '0 20px 50px rgba(0,0,0,0.6)',
-              pointerEvents: isMenuOpen ? 'auto' : 'none'
+              boxShadow: isLight ? '0 10px 30px rgba(0,0,0,0.1)' : `0 20px 50px rgba(0,0,0,0.8), 0 0 20px ${accentColor}20`,
+              pointerEvents: isMenuOpen ? 'auto' : 'none',
+              border: isLight ? '1px solid #e2e8f0' : `1px solid ${accentColor}30`,
+              backdropFilter: 'blur(12px)'
             }}
           >
             {[
@@ -87,9 +90,15 @@ const Navbar = ({ isLight = false, accentColor = '#00f0ff' }) => {
                 key={label} 
                 to={to}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-right font-semibold text-sm uppercase tracking-wider block transition-colors ${isLight ? 'text-slate-700' : 'text-[#e8e8ee]'}`}
-                onMouseEnter={e => e.currentTarget.style.color = accentColor}
-                onMouseLeave={e => e.currentTarget.style.color = isLight ? '#334155' : '#e8e8ee'}
+                className={`text-center font-medium text-sm uppercase tracking-widest block transition-all duration-300 hover:scale-105 ${isLight ? 'text-slate-700' : 'text-[#e8e8ee]'}`}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = accentColor;
+                  e.currentTarget.style.textShadow = `0 0 10px ${accentColor}40`;
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = isLight ? '#334155' : '#e8e8ee';
+                  e.currentTarget.style.textShadow = 'none';
+                }}
               >
                 {label}
               </Link>
