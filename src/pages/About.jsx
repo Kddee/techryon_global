@@ -53,11 +53,22 @@ const About = () => {
         style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}
       >
 
+        {/* Page Title */}
+        <div style={{ marginBottom: '3rem' }}>
+          <p style={{ fontSize: '0.8rem', color: '#00f0ff', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: '700', marginBottom: '0.5rem' }}>
+            Techryon Global
+          </p>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-wide" style={{ color: '#e8e8ee' }}>
+            About Us
+          </h1>
+          <div style={{ width: '3.5rem', height: '3px', background: '#00f0ff', borderRadius: '2px', marginTop: '1rem' }} />
+        </div>
+
         {/* Mission Section */}
         <div style={{ marginBottom: '5rem', maxWidth: '800px' }}>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide leading-tight" style={{ color: '#e8e8ee' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide leading-tight" style={{ color: '#e8e8ee' }}>
             Architecting the Next Epoch of <span className="text-gradient">Enterprise Technology.</span>
-          </h1>
+          </h2>
           <p className="text-xl text-secondary leading-relaxed">
             Techryon Global was founded on a singular premise: the gap between theoretical computer science and practical enterprise application is widening. We exist to bridge that gap. We are a collective of distributed systems architects, quantitative data scientists, and offensive security researchers dedicated to building high-availability, AI-driven ecosystems for the modern web.
           </p>
