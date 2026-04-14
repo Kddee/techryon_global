@@ -28,7 +28,8 @@ const Contact = () => {
               </h2>
               <div className="flex flex-col gap-6">
 
-                {/* Location */}
+                {/* TODO: Uncomment and add real contact details when ready
+                
                 <div className="group flex items-center" style={{ gap: '1.25rem' }}>
                   <div className="transition-all duration-300" style={{ padding: '0.75rem', background: 'rgba(0, 240, 255, 0.1)', color: '#00f0ff', borderRadius: '0.75rem' }}>
                     <MapPin size={22} />
@@ -41,7 +42,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="group flex items-center" style={{ gap: '1.25rem' }}>
                   <div className="transition-all duration-300" style={{ padding: '0.75rem', background: 'rgba(168, 85, 247, 0.1)', color: '#a855f7', borderRadius: '0.75rem' }}>
                     <Mail size={22} />
@@ -53,7 +53,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="group flex items-center" style={{ gap: '1.25rem' }}>
                   <div className="transition-all duration-300" style={{ padding: '0.75rem', background: 'rgba(236, 72, 153, 0.1)', color: '#ec4899', borderRadius: '0.75rem' }}>
                     <Phone size={22} />
@@ -64,6 +63,7 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
+                */}
 
               </div>
             </div>
