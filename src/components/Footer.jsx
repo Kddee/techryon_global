@@ -103,7 +103,6 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* TODO: Uncomment and add real email when ready
               <a
                 href="mailto:example@techryonglobal.com"
                 style={{
@@ -118,7 +117,6 @@ const Footer = () => {
               >
                 <Mail size={26} />
               </a>
-              */}
             </div>
           </div>
         </div>
