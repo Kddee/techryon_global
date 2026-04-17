@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Cpu, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import tgLogo from '../assets/tg-logo.png';
 
 const Navbar = ({ isLight = false, accentColor = '#00f0ff' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = ({ isLight = false, accentColor = '#00f0ff' }) => {
         {/* Left: Logo */}
         <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <div className={`p-1.5 rounded-lg transition-all ${isLight ? 'bg-slate-200' : 'bg-white/5'}`}>
-            <Cpu style={{ color: accentColor }} size={28} />
+            <img src={tgLogo} alt="Techryon Global Logo" style={{ width: 28, height: 28, objectFit: 'contain' }} />
           </div>
           <span className={`text-2xl font-bold tracking-widest uppercase ${!isLight ? 'text-[#e8e8ee] title-glow' : 'text-slate-900'}`}>
             Techryon<span style={{ color: accentColor }}>Global</span>

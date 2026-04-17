@@ -1,5 +1,7 @@
 import React from 'react';
 import { Cpu, ShieldCheck, Box } from 'lucide-react';
+import drAidaPhoto from '../assets/aida-mehrad.jpeg';
+import LMphoto from '../assets/LM.jpeg';
 
 const About = () => {
   const values = [
@@ -25,16 +27,18 @@ const About = () => {
 
   const team = [
     {
-      name: "Dr. Example",
-      role: "Founder & Chief Executive Officer",
+      name: "Dr. Aida Mehrad",
+      role: "Advisory Board Member",
       bio: "Former Director of Distributed Systems at NeuralCore, specializing in highly concurrent cloud infrastructure.",
-      glow: "rgba(210,170,100,0.15)"
+      glow: "rgba(210,170,100,0.15)",
+      image: drAidaPhoto
     },
     {
-      name: "Example",
-      role: "Chief AI Scientist",
-      bio: "Lead researcher in parameter-efficient fine-tuning (PEFT) and the mitigation of algorithmic bias in LLMs.",
-      glow: "rgba(0,240,255,0.15)"
+      name: "Lawrence Mazaki Mashati",
+      role: "Advisory Board Member",
+      bio: "Community Development Professional, International Missionary for Christ Kenya (IMFC) Nairobi, Kenya",
+      glow: "rgba(0,240,255,0.15)",
+      image: LMphoto
     },
     {
       name: "example example",
@@ -143,6 +147,20 @@ const About = () => {
                 }}
               >
                 <div style={{ marginBottom: '1.5rem' }}>
+                  {member.image && (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      style={{
+                        width: '6rem',
+                        height: '6rem',
+                        borderRadius: '1rem',
+                        objectFit: 'cover',
+                        marginBottom: '1.25rem',
+                        border: '2px solid rgba(255,255,255,0.1)'
+                      }}
+                    />
+                  )}
                   <h3 className="text-2xl font-bold" style={{ color: '#e8e8ee', marginBottom: '0.25rem' }}>{member.name}</h3>
                   <div style={{ fontSize: '0.85rem', color: '#00f0ff', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: '700' }}>
                     {member.role}

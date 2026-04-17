@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Cpu, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import tgLogo from '../assets/tg-logo.png';
 
 const Footer = () => {
   const location = useLocation();
@@ -61,7 +62,7 @@ const Footer = () => {
           {/* Brand & Social */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity" style={{ width: 'fit-content' }}>
-              <Cpu size={26} style={{ color: t.accent }} />
+              <img src={tgLogo} alt="Techryon Global Logo" style={{ width: 26, height: 26, objectFit: 'contain' }} />
               <span
                 className="text-xl font-bold uppercase tracking-widest"
                 style={{ color: t.text }}

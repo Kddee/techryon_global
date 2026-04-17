@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Terminal, Cpu, Mic2 } from 'lucide-react';
+import { ArrowRight, Terminal, Mic2 } from 'lucide-react';
+import tgLogo from '../assets/tg-logo.png';
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
         {/* Central Logo, Name and Typography */}
         <div className="flex flex-col items-center mb-16">
           <div className="p-5 rounded-2xl bg-white/10 shadow-[0_0_30px_rgba(0,240,255,0.3)] mb-8">
-            <Cpu className="text-accent" size={64} />
+            <img src={tgLogo} alt="Techryon Global Logo" style={{ width: 64, height: 64, objectFit: 'contain' }} />
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold title-glow mb-10 tracking-widest uppercase">
