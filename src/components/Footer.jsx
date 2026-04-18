@@ -76,7 +76,7 @@ const Footer = () => {
             {/* Social & Contact Links */}
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1.25rem', marginTop: '0.75rem' }}>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/113171257"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: t.subtle, transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
@@ -104,9 +104,8 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* TODO: Uncomment and add real email when ready
               <a
-                href="mailto:example@techryonglobal.com"
+                href="mailto:inquiries@techryonglobal.com"
                 style={{
                   color: t.subtle,
                   transition: 'color 0.2s',
@@ -119,7 +118,6 @@ const Footer = () => {
               >
                 <Mail size={26} />
               </a>
-              */}
             </div>
           </div>
         </div>

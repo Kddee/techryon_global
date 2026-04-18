@@ -24,11 +24,11 @@ const Contact = () => {
           <div className="flex flex-col gap-10">
             <div>
               <h2 className="text-2xl font-bold tracking-wide mb-8 uppercase" style={{ color: '#e8e8ee', letterSpacing: '0.1em' }}>
-                Headquarters
+                Contact us at:
               </h2>
               <div className="flex flex-col gap-6">
 
-                {/* TODO: Uncomment and add real contact details when ready
+                {/* TODO: Uncomment real address and phone when ready
                 
                 <div className="group flex items-center" style={{ gap: '1.25rem' }}>
                   <div className="transition-all duration-300" style={{ padding: '0.75rem', background: 'rgba(0, 240, 255, 0.1)', color: '#00f0ff', borderRadius: '0.75rem' }}>
@@ -41,18 +41,20 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
+                */}
 
                 <div className="group flex items-center" style={{ gap: '1.25rem' }}>
                   <div className="transition-all duration-300" style={{ padding: '0.75rem', background: 'rgba(168, 85, 247, 0.1)', color: '#a855f7', borderRadius: '0.75rem' }}>
                     <Mail size={22} />
                   </div>
                   <div>
-                    <p className="text-secondary leading-relaxed text-lg">
-                      example@techryonglobal.com
-                    </p>
+                    <a href="mailto:inquiries@techryonglobal.com" className="text-secondary hover:text-white transition-colors leading-relaxed text-lg">
+                      inquiries@techryonglobal.com
+                    </a>
                   </div>
                 </div>
 
+                {/*
                 <div className="group flex items-center" style={{ gap: '1.25rem' }}>
                   <div className="transition-all duration-300" style={{ padding: '0.75rem', background: 'rgba(236, 72, 153, 0.1)', color: '#ec4899', borderRadius: '0.75rem' }}>
                     <Phone size={22} />
