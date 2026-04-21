@@ -2,6 +2,7 @@ import React from 'react';
 import { Cpu, ShieldCheck, Box } from 'lucide-react';
 import drAidaPhoto from '../assets/aida-mehrad.jpeg';
 import LMphoto from '../assets/LM.jpeg';
+import MWphoto from '../assets/MW.jpeg';
 
 const About = () => {
   const values = [
@@ -27,24 +28,27 @@ const About = () => {
 
   const team = [
     {
-      name: "Dr. Aida Mehrad",
-      role: "Advisory Board Member",
-      bio: "Former Director of Distributed Systems at NeuralCore, specializing in highly concurrent cloud infrastructure.",
-      glow: "rgba(210,170,100,0.15)",
-      image: drAidaPhoto
-    },
-    {
       name: "Lawrence Mazaki Mashati",
-      role: "Advisory Board Member",
-      bio: "Community Development Professional, International Missionary for Christ Kenya (IMFC) Nairobi, Kenya",
+      role: "Executive Director",
+      /* bio: "Community Development Professional, International Missionary for Christ Kenya (IMFC) Nairobi, Kenya",*/
       glow: "rgba(0,240,255,0.15)",
       image: LMphoto
     },
     {
-      name: "example example",
-      role: "Head of Offensive Security",
-      bio: "Zero-day vulnerability researcher and architect of predictive threat modeling frameworks.",
-      glow: "rgba(236,72,153,0.15)"
+      name: "Dr. Aida Mehrad",
+      role: "Advisory Board Member",
+      /*bio: "Former Director of Distributed Systems at NeuralCore, specializing in highly concurrent cloud infrastructure.",
+      */
+      glow: "rgba(210,170,100,0.15)",
+      image: drAidaPhoto
+    },
+    {
+      name: "Dr. Marek Wasiluk",
+      role: "Advisory Board Member",
+      /* bio: "Zero-day vulnerability researcher and architect of predictive threat modeling frameworks.",
+      */
+      glow: "rgba(236,72,153,0.15)",
+      image: MWphoto
     }
   ];
 
