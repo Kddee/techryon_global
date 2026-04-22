@@ -8,17 +8,17 @@ import { eventsData } from '../data/eventsData';
 
 /* ─── Visual Mapping for dynamic component styling ───────── */
 const visualMap = {
-  "evt_001": { icon: Brain,       accent: 'rgba(210,170,100,0.85)', glow: 'rgba(210,170,100,0.18)' },
-  "evt_002": { icon: Code2,       accent: 'rgba(100,180,210,0.85)', glow: 'rgba(100,180,210,0.18)' },
-  "evt_003": { icon: Cloud,       accent: 'rgba(130,210,160,0.85)', glow: 'rgba(130,210,160,0.18)' },
+  "evt_001": { icon: Brain, accent: 'rgba(210,170,100,0.85)', glow: 'rgba(210,170,100,0.18)' },
+  "evt_002": { icon: Code2, accent: 'rgba(100,180,210,0.85)', glow: 'rgba(100,180,210,0.18)' },
+  "evt_003": { icon: Cloud, accent: 'rgba(130,210,160,0.85)', glow: 'rgba(130,210,160,0.18)' },
   "evt_004": { icon: ShieldCheck, accent: 'rgba(210,110,110,0.85)', glow: 'rgba(210,110,110,0.18)' },
-  "evt_005": { icon: Landmark,    accent: 'rgba(180,150,210,0.85)', glow: 'rgba(180,150,210,0.18)' },
-  "evt_006": { icon: Smartphone,  accent: 'rgba(210,170,100,0.85)', glow: 'rgba(210,170,100,0.18)' },
-  "evt_007": { icon: Atom,        accent: 'rgba(100,200,200,0.85)', glow: 'rgba(100,200,200,0.18)' },
+  "evt_005": { icon: Landmark, accent: 'rgba(180,150,210,0.85)', glow: 'rgba(180,150,210,0.18)' },
+  "evt_006": { icon: Smartphone, accent: 'rgba(210,170,100,0.85)', glow: 'rgba(210,170,100,0.18)' },
+  "evt_007": { icon: Atom, accent: 'rgba(100,200,200,0.85)', glow: 'rgba(100,200,200,0.18)' },
 };
 
 const categoryStyle = {
-  'Technical Summit':     { bg: 'rgba(210,110,110,0.15)', color: '#d26e6e', border: 'rgba(210,110,110,0.3)' },
+  'Technical Summit': { bg: 'rgba(210,110,110,0.15)', color: '#d26e6e', border: 'rgba(210,110,110,0.3)' },
   'Technical Conference': { bg: 'rgba(100,180,210,0.15)', color: '#64b4d2', border: 'rgba(100,180,210,0.3)' },
 };
 
@@ -58,9 +58,9 @@ const Events = () => {
           border: '1px solid rgba(255,255,255,0.05)', borderRadius: '1.25rem',
         }}>
           {[
-            { label: 'Our Events',       value: '7'    },
-            { label: 'Global Cities',    value: '5'    },
-            { label: 'Expert Speakers',  value: '150+' },
+            { label: 'Our Events', value: '7' },
+            { label: 'Global Cities', value: '5' },
+            { label: 'Expert Speakers', value: '150+' },
           ].map((stat, i) => (
             <div key={i} style={{ flexGrow: 1, minWidth: '120px' }}>
               <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#d2aa64', marginBottom: '0.1rem' }}>{stat.value}</div>
@@ -86,6 +86,84 @@ const Events = () => {
           ))}
         </div>
 
+        {/* ── Upcoming Events Section ── */}
+        <div style={{ marginBottom: '4rem' }}>
+          <div style={{ marginBottom: '2.5rem' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '0.35rem 1rem',
+              borderRadius: '2rem',
+              background: 'linear-gradient(135deg, rgba(0,240,255,0.12), rgba(0,180,220,0.06))',
+              border: '1px solid rgba(0,240,255,0.25)',
+              marginBottom: '1rem',
+            }}>
+              <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#00f0ff', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                Coming Soon
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-wide" style={{ color: '#e8e8ee', marginBottom: '0.4rem' }}>
+              Upcoming Events
+            </h2>
+            <p style={{ fontSize: '0.95rem', color: '#9090a0', maxWidth: '520px', lineHeight: 1.6 }}>
+              Mark your calendars, these next-generation gatherings are on the horizon.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+            gap: '1.75rem',
+          }}>
+            {[
+              {
+                title: 'AI in Healthcare Summit 2026',
+                date: 'June 21, 2026',
+                dateShort: { month: 'JUN', day: '21' },
+                location: 'Zurich Convention Centre, Switzerland & Virtual',
+                format: 'Hybrid',
+                accent: 'rgba(0,220,180,0.85)',
+                glow: 'rgba(0,220,180,0.15)',
+                description: 'Exploring the convergence of artificial intelligence and precision medicine; from diagnostic imaging neural networks to federated learning across hospital systems while preserving patient data sovereignty.',
+                tags: ['#AI', '#HealthTech', '#MedicalImaging', '#FederatedLearning'],
+              },
+              {
+                title: 'DevOps & Platform Engineering Forum',
+                date: 'July 5, 2026',
+                dateShort: { month: 'JUL', day: '05' },
+                location: 'Austin Convention Center, Texas, USA & Virtual',
+                format: 'Hybrid',
+                accent: 'rgba(255,165,0,0.85)',
+                glow: 'rgba(255,165,0,0.15)',
+                description: 'A deep-dive into internal developer platforms, GitOps workflows, and the next wave of infrastructure automation; featuring live demonstrations of self-healing CI/CD pipelines and policy-as-code frameworks.',
+                tags: ['#DevOps', '#PlatformEng', '#GitOps', '#IaC'],
+              },
+              {
+                title: 'Cybersecurity Threat Landscape Conference',
+                date: 'July 12, 2026',
+                dateShort: { month: 'JUL', day: '12' },
+                location: 'ICC Sydney, Australia & Virtual',
+                format: 'Hybrid',
+                accent: 'rgba(220,60,60,0.85)',
+                glow: 'rgba(220,60,60,0.15)',
+                description: 'An intensive examination of the evolving global threat landscape; covering AI-driven social engineering, post-quantum cryptographic migration strategies, and advanced persistent threat (APT) attribution methodologies.',
+                tags: ['#Cybersecurity', '#ThreatIntel', '#PostQuantum', '#APT'],
+              },
+            ].map((upcoming, idx) => (
+              <UpcomingEventCard key={idx} event={upcoming} idx={idx} />
+            ))}
+          </div>
+        </div>
+
+        {/* ── Past Events Header ── */}
+        <div style={{ marginBottom: '2.5rem' }}>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-wide" style={{ color: '#e8e8ee', marginBottom: '0.4rem' }}>
+            Past Events
+          </h2>
+          <p style={{ fontSize: '0.95rem', color: '#9090a0', maxWidth: '520px', lineHeight: 1.6 }}>
+            A look back at our previous conferences and summits.
+          </p>
+        </div>
+
         {/* ── Events Grid ── */}
         <div style={{
           display: 'grid',
@@ -93,7 +171,7 @@ const Events = () => {
           gap: '1.75rem',
         }}>
           {filtered.map((ev, idx) => {
-            const visual   = visualMap[ev.id];
+            const visual = visualMap[ev.id];
             const IconComp = visual.icon;
             const catStyle = categoryStyle[ev.category] || categoryStyle['Technical Conference'];
             return (
@@ -226,6 +304,118 @@ const EventCard = ({ ev, visual, idx, IconComp, catStyle, onLearnMore }) => {
             transform: hovered ? 'translate(2px, -2px)' : 'translate(0, 0)'
           }} />
         </button>
+      </div>
+    </div>
+  );
+};
+
+/* ─── Upcoming Event Card ────────────────────────────────── */
+const UpcomingEventCard = ({ event, idx }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: hovered ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.03)',
+        border: hovered ? `1px solid ${event.accent}` : '1px solid rgba(255,255,255,0.07)',
+        borderRadius: '1.5rem',
+        padding: '1.75rem',
+        display: 'flex', flexDirection: 'column', gap: '1rem',
+        transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
+        transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
+        boxShadow: hovered
+          ? `0 16px 48px ${event.glow}, inset 0 0 24px ${event.glow}`
+          : '0 4px 24px rgba(0,0,0,0.25)',
+        cursor: 'default',
+        animationDelay: `${idx * 80}ms`,
+        position: 'relative', overflow: 'hidden',
+      }}
+    >
+      {/* Top accent line */}
+      <div style={{
+        position: 'absolute', top: 0, left: 0, right: 0, height: '2px',
+        background: `linear-gradient(90deg, transparent, ${event.accent}, transparent)`,
+        opacity: hovered ? 1 : 0, transition: 'opacity 0.35s ease',
+      }} />
+
+      {/* Date badge + Coming Soon badge */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div style={{
+          display: 'flex', flexDirection: 'column', alignItems: 'center',
+          background: event.glow, borderRadius: '0.875rem',
+          padding: '0.6rem 1rem', minWidth: '3.5rem',
+          transition: 'transform 0.35s ease',
+          transform: hovered ? 'scale(1.08)' : 'scale(1)',
+        }}>
+          <span style={{ fontSize: '0.65rem', fontWeight: 800, color: event.accent, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+            {event.dateShort.month}
+          </span>
+          <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#e8e8ee', lineHeight: 1.1 }}>
+            {event.dateShort.day}
+          </span>
+        </div>
+        <span style={{
+          fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em',
+          textTransform: 'uppercase', padding: '0.3rem 0.8rem', borderRadius: '2rem',
+          background: 'rgba(0,240,255,0.1)', color: '#00f0ff', border: '1px solid rgba(0,240,255,0.25)',
+        }}>Upcoming</span>
+      </div>
+
+      {/* Title */}
+      <h2 style={{ fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.4, color: '#e8e8ee' }}>{event.title}</h2>
+
+      {/* Meta */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <CalendarDays size={14} style={{ color: event.accent, flexShrink: 0 }} />
+          <span style={{ fontSize: '0.83rem', color: '#b0a090' }}>{event.date}</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <MapPin size={14} style={{ color: event.accent, flexShrink: 0 }} />
+          <span style={{ fontSize: '0.83rem', color: '#b0a090' }}>{event.location}</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Globe size={14} style={{ color: event.accent, flexShrink: 0 }} />
+          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: event.accent, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            {event.format}
+          </span>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+
+      {/* Description */}
+      <p style={{ fontSize: '0.875rem', lineHeight: 1.7, color: '#8a8a9a', flexGrow: 1 }}>{event.description}</p>
+
+      {/* Tags */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem', marginTop: '0.25rem' }}>
+        {event.tags.map(tag => (
+          <span key={tag} style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.2rem',
+            fontSize: '0.72rem', fontWeight: 600,
+            padding: '0.25rem 0.65rem', borderRadius: '2rem',
+            background: 'rgba(210,170,100,0.07)',
+            border: '1px solid rgba(210,170,100,0.18)',
+            color: '#a09070',
+          }}>
+            <Tag size={10} />{tag}
+          </span>
+        ))}
+      </div>
+
+      {/* Details coming soon */}
+      <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
+        <span style={{
+          display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+          fontSize: '0.82rem', fontWeight: 700,
+          color: '#5a5a6a',
+          letterSpacing: '0.06em', textTransform: 'uppercase',
+        }}>
+          Details Coming Soon
+        </span>
       </div>
     </div>
   );

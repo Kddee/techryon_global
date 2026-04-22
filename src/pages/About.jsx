@@ -1,8 +1,9 @@
 import React from 'react';
-import { Cpu, ShieldCheck, Box } from 'lucide-react';
+import { Cpu, ShieldCheck, Box, User } from 'lucide-react';
 import drAidaPhoto from '../assets/aida-mehrad.jpeg';
 import LMphoto from '../assets/LM.jpeg';
 import MWphoto from '../assets/MW.jpeg';
+import CFphoto from '../assets/cf.jpeg';
 
 const About = () => {
   const values = [
@@ -35,6 +36,12 @@ const About = () => {
       image: LMphoto
     },
     {
+      name: "Marghescu Cristina-Florentina",
+      role: "Board Member",
+      glow: "rgba(139,92,246,0.15)",
+      image: CFphoto
+    },
+    {
       name: "Dr. Aida Mehrad",
       role: "Advisory Board Member",
       /*bio: "Former Director of Distributed Systems at NeuralCore, specializing in highly concurrent cloud infrastructure.",
@@ -50,6 +57,7 @@ const About = () => {
       glow: "rgba(236,72,153,0.15)",
       image: MWphoto
     }
+
   ];
 
   return (
@@ -126,7 +134,7 @@ const About = () => {
           <h2 className="text-2xl font-bold tracking-wide mb-8 uppercase" style={{ color: '#e8e8ee', letterSpacing: '0.1em' }}>
             Leadership Team
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, idx) => (
               <div
                 key={idx}
@@ -151,7 +159,7 @@ const About = () => {
                 }}
               >
                 <div style={{ marginBottom: '1.5rem' }}>
-                  {member.image && (
+                  {member.image ? (
                     <img
                       src={member.image}
                       alt={member.name}
@@ -164,6 +172,20 @@ const About = () => {
                         border: '2px solid rgba(255,255,255,0.1)'
                       }}
                     />
+                  ) : (
+                    <div style={{
+                      width: '6rem',
+                      height: '6rem',
+                      borderRadius: '1rem',
+                      marginBottom: '1.25rem',
+                      border: '2px dashed rgba(139,92,246,0.35)',
+                      background: 'rgba(139,92,246,0.08)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}>
+                      <User size={32} style={{ color: 'rgba(139,92,246,0.5)' }} />
+                    </div>
                   )}
                   <h3 className="text-2xl font-bold" style={{ color: '#e8e8ee', marginBottom: '0.25rem' }}>{member.name}</h3>
                   <div style={{ fontSize: '0.85rem', color: '#00f0ff', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: '700' }}>
