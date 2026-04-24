@@ -116,6 +116,7 @@ const Events = () => {
           }}>
             {[
               {
+                id: 'evt_008',
                 title: 'NEXAICON 2026',
                 date: 'May 10, 2026',
                 dateShort: { month: 'MAY', day: '10' },
@@ -127,6 +128,7 @@ const Events = () => {
                 tags: ['#AI', '#Computing', '#NexusTech', '#Research'],
               },
               {
+                id: 'evt_009',
                 title: 'TECHNEXUS GLOBAL CONFERENCE 2026 (TGC-26)',
                 date: 'May 17, 2026',
                 dateShort: { month: 'MAY', day: '17' },
@@ -138,6 +140,7 @@ const Events = () => {
                 tags: ['#AdvancedComputing', '#Enterprise', '#Systems', '#DigitalTransformation'],
               },
               {
+                id: 'evt_010',
                 title: 'DIGITCORE CONFERENCE 2026 (DCC-26)',
                 date: 'May 24, 2026',
                 dateShort: { month: 'MAY', day: '24' },
@@ -149,6 +152,7 @@ const Events = () => {
                 tags: ['#DigitalInfra', '#CoreTech', '#CloudNative', '#EdgeComputing'],
               },
               {
+                id: 'evt_011',
                 title: 'CORETECH SUMMIT 2026',
                 date: 'May 31, 2026',
                 dateShort: { month: 'MAY', day: '31' },
@@ -160,7 +164,7 @@ const Events = () => {
                 tags: ['#ITInfra', '#CoreIT', '#Cybersecurity', '#Networking'],
               },
             ].map((upcoming, idx) => (
-              <UpcomingEventCard key={idx} event={upcoming} idx={idx} />
+              <UpcomingEventCard key={idx} event={upcoming} idx={idx} onLearnMore={() => navigate(`/events/${upcoming.id}`)} />
             ))}
           </div>
         </div>
@@ -182,7 +186,8 @@ const Events = () => {
           gap: '1.75rem',
         }}>
           {filtered.map((ev, idx) => {
-            const visual = visualMap[ev.id];
+            const fallbackVisual = { icon: Brain, accent: 'rgba(210,170,100,0.85)', glow: 'rgba(210,170,100,0.18)' };
+            const visual = visualMap[ev.id] || fallbackVisual;
             const IconComp = visual.icon;
             const catStyle = categoryStyle[ev.category] || categoryStyle['Technical Conference'];
             return (
@@ -321,7 +326,7 @@ const EventCard = ({ ev, visual, idx, IconComp, catStyle, onLearnMore }) => {
 };
 
 /* ─── Upcoming Event Card ────────────────────────────────── */
-const UpcomingEventCard = ({ event, idx }) => {
+const UpcomingEventCard = ({ event, idx, onLearnMore }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -417,16 +422,24 @@ const UpcomingEventCard = ({ event, idx }) => {
         ))}
       </div>
 
-      {/* Details coming soon */}
+      {/* Learn more */}
       <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-        <span style={{
-          display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-          fontSize: '0.82rem', fontWeight: 700,
-          color: '#5a5a6a',
-          letterSpacing: '0.06em', textTransform: 'uppercase',
-        }}>
-          Details Coming Soon
-        </span>
+        <button
+          onClick={onLearnMore}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+            fontSize: '0.82rem', fontWeight: 700,
+            color: hovered ? event.accent : '#7a7a8a',
+            transition: 'color 0.25s ease',
+            background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+            letterSpacing: '0.06em', textTransform: 'uppercase',
+          }}
+        >
+          Learn More <ArrowUpRight size={14} style={{
+            transition: 'transform 0.25s ease',
+            transform: hovered ? 'translate(2px, -2px)' : 'translate(0, 0)'
+          }} />
+        </button>
       </div>
     </div>
   );

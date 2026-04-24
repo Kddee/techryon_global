@@ -269,5 +269,113 @@ export const eventsData = [
       { "tier": "Virtual Pass", "price": "Free", "perks": ["Access to theoretical physics tracks and VOD"] },
       { "tier": "In-Person Standard", "price": "$450", "perks": ["Access to applied engineering workshops", "Poster sessions", "Hardware vendor hall"] }
     ]
+  },
+  {
+    "id": "evt_008",
+    "title": "NEXAICON 2026",
+    "format": "Virtual",
+    "location": "Virtual",
+    "date": "May 10, 2026",
+    "category": "Technical Summit",
+    "tags": ["#AI", "#Computing", "#NexusTech", "#Research"],
+    "overview": "International Conference on AI, Computing & Nexus Technologies: bridging the frontiers of artificial intelligence, next-generation computing paradigms, and interconnected technology ecosystems through cutting-edge research presentations and global collaboration.",
+    "themes": [
+      "Artificial Intelligence Frontiers: Exploring next-generation neural networks and their applications.",
+      "Computing Paradigms: Scalable and high-performance computing architectures.",
+      "Interconnected Ecosystems: Bridging the gap between various technology stacks."
+    ],
+    "agenda": [
+      {
+        "day": "May 10",
+        "sessions": [
+          "09:00 AM - Opening Keynote",
+          "11:00 AM - Technical Session: AI Advancements",
+          "02:00 PM - Research Presentations"
+        ]
+      }
+    ],
+    "speakers": [],
+    "pricing": []
+  },
+  {
+    "id": "evt_009",
+    "title": "TECHNEXUS GLOBAL CONFERENCE 2026 (TGC-26)",
+    "format": "Virtual",
+    "location": "Virtual",
+    "date": "May 17, 2026",
+    "category": "Technical Conference",
+    "tags": ["#AdvancedComputing", "#Enterprise", "#Systems", "#DigitalTransformation"],
+    "overview": "International Conference on Advanced Computing, Systems & Enterprise Technologies: exploring breakthroughs in high-performance computing, scalable enterprise architectures, and intelligent systems that drive digital transformation across industries.",
+    "themes": [
+      "High-Performance Computing: Supercomputing and scalable systems.",
+      "Enterprise Architectures: Modernizing legacy enterprise systems.",
+      "Digital Transformation: Driving industry change through technology."
+    ],
+    "agenda": [
+      {
+        "day": "May 17",
+        "sessions": [
+          "09:00 AM - Opening Keynote",
+          "11:00 AM - Technical Session: Enterprise Scaling",
+          "02:00 PM - Panel: Digital Transformation Strategies"
+        ]
+      }
+    ],
+    "speakers": [],
+    "pricing": []
+  },
+  {
+    "id": "evt_010",
+    "title": "DIGITCORE CONFERENCE 2026 (DCC-26)",
+    "format": "Virtual",
+    "location": "Virtual",
+    "date": "May 24, 2026",
+    "category": "Technical Conference",
+    "tags": ["#DigitalInfra", "#CoreTech", "#CloudNative", "#EdgeComputing"],
+    "overview": "International Conference on Digital Infrastructure & Core Technologies: examining the foundational layers of modern digital ecosystems, from cloud-native architectures and edge computing to data pipeline engineering and resilient infrastructure design.",
+    "themes": [
+      "Cloud-Native Architectures: Designing for the modern cloud.",
+      "Edge Computing: Processing data at the network edge.",
+      "Resilient Infrastructure: Building fail-safe engineering systems."
+    ],
+    "agenda": [
+      {
+        "day": "May 24",
+        "sessions": [
+          "09:00 AM - Opening Keynote",
+          "11:00 AM - Technical Session: Cloud-Native Best Practices",
+          "02:00 PM - Workshop: Infrastructure Resilience"
+        ]
+      }
+    ],
+    "speakers": [],
+    "pricing": []
+  },
+  {
+    "id": "evt_011",
+    "title": "CORETECH SUMMIT 2026",
+    "format": "Virtual",
+    "location": "Virtual",
+    "date": "May 31, 2026",
+    "category": "Technical Summit",
+    "tags": ["#ITInfra", "#CoreIT", "#Cybersecurity", "#Networking"],
+    "overview": "Global Conference on Core IT Infrastructure & Technologies: a premier summit uniting industry leaders and researchers to address mission-critical IT infrastructure, cybersecurity frameworks, networking innovations, and the future of enterprise technology stacks.",
+    "themes": [
+      "Mission-Critical IT: Safeguarding essential infrastructure.",
+      "Cybersecurity Frameworks: Defending against modern threats.",
+      "Networking Innovations: Next-generation connectivity solutions."
+    ],
+    "agenda": [
+      {
+        "day": "May 31",
+        "sessions": [
+          "09:00 AM - Opening Keynote",
+          "11:00 AM - Technical Session: Security and Networking",
+          "02:00 PM - Panel: Future of IT Infrastructure"
+        ]
+      }
+    ],
+    "speakers": [],
+    "pricing": []
   }
 ];
