@@ -280,17 +280,18 @@ export const eventsData = [
     "tags": ["#AI", "#Computing", "#NexusTech", "#Research"],
     "overview": "International Conference on AI, Computing & Nexus Technologies: bridging the frontiers of artificial intelligence, next-generation computing paradigms, and interconnected technology ecosystems through cutting-edge research presentations and global collaboration.",
     "themes": [
-      "Artificial Intelligence Frontiers: Exploring next-generation neural networks and their applications.",
-      "Computing Paradigms: Scalable and high-performance computing architectures.",
-      "Interconnected Ecosystems: Bridging the gap between various technology stacks."
+      "Artificial Intelligence Frontiers: Exploring next-generation neural networks, LLM scaling laws, and generative AI applications. We will dive deep into how foundational models can be trained more efficiently using novel parameter-efficient fine-tuning techniques. Participants will learn how to reduce hallucination rates and improve model reasoning capabilities in complex, domain-specific tasks. The track also covers the latest breakthroughs in multi-modal architectures that seamlessly blend text, image, and audio understanding.",
+      "Computing Paradigms: Scalable and high-performance computing architectures, including quantum-inspired algorithms. This track focuses on the hardware constraints and novel solutions needed to support exascale computing workloads. Discover how new chip designs, optical interconnects, and advanced cooling technologies are reshaping data centers. Experts will share case studies on migrating legacy monolithic computational models to dynamic, heterogeneous computing clusters.",
+      "Interconnected Ecosystems: Bridging the gap between various technology stacks, IoT, and edge computing integration. We will explore the seamless synchronization of data across billions of decentralized devices with minimal latency. Learn about the development of robust, federated learning frameworks that prioritize user privacy while maintaining global model accuracy. The sessions will also address the standardization of APIs and protocols necessary for true interoperability between competing tech ecosystems."
     ],
     "agenda": [
       {
-        "day": "May 10",
+        "day": "Day 1: AI Advancements",
         "sessions": [
-          "09:00 AM - Opening Keynote",
-          "11:00 AM - Technical Session: AI Advancements",
-          "02:00 PM - Research Presentations"
+          "09:00 AM - Opening Keynote: The Future of General Intelligence",
+          "11:00 AM - Technical Session: Scaling Laws in Large Language Models",
+          "01:00 PM - Panel: AI Ethics and Global Governance",
+          "03:00 PM - Research Presentations: Novel Architectures"
         ]
       }
     ],
@@ -307,17 +308,18 @@ export const eventsData = [
     "tags": ["#AdvancedComputing", "#Enterprise", "#Systems", "#DigitalTransformation"],
     "overview": "International Conference on Advanced Computing, Systems & Enterprise Technologies: exploring breakthroughs in high-performance computing, scalable enterprise architectures, and intelligent systems that drive digital transformation across industries.",
     "themes": [
-      "High-Performance Computing: Supercomputing and scalable systems.",
-      "Enterprise Architectures: Modernizing legacy enterprise systems.",
-      "Digital Transformation: Driving industry change through technology."
+      "High-Performance Computing: Supercomputing, parallel processing architectures, and scalable systems. Dive into the mechanics of building massive compute clusters capable of running complex simulations in real time. We will discuss strategies for optimizing memory bandwidth, reducing interconnect latency, and managing thermal envelopes in high-density environments. This theme provides a comprehensive look at the future of enterprise-grade supercomputing.",
+      "Enterprise Architectures: Modernizing legacy enterprise systems and microservices deployment. Learn practical methodologies for untangling monolithic legacy codebases without disrupting mission-critical business operations. We will explore advanced orchestration techniques using Kubernetes and service meshes to manage thousands of microservices efficiently. Discover how to build resilient, self-healing architectures that can automatically scale in response to unpredictable traffic spikes.",
+      "Digital Transformation: Driving industry change through automation, cloud integration, and data analytics. This track highlights the shift from traditional operational models to agile, data-driven frameworks. Understand how to implement robotic process automation (RPA) and AI-driven insights to drastically reduce operational overhead. We will feature real-world examples of organizations that have successfully navigated digital transitions to outpace their competitors."
     ],
     "agenda": [
       {
-        "day": "May 17",
+        "day": "Day 1: Enterprise Evolution",
         "sessions": [
-          "09:00 AM - Opening Keynote",
-          "11:00 AM - Technical Session: Enterprise Scaling",
-          "02:00 PM - Panel: Digital Transformation Strategies"
+          "09:30 AM - Opening Keynote: The Next Decade of Enterprise Systems",
+          "11:00 AM - Technical Session: Distributed Databases at Exabyte Scale",
+          "02:00 PM - Workshop: Modernizing Legacy Infrastructure",
+          "04:00 PM - Panel: Digital Transformation Success Stories"
         ]
       }
     ],
@@ -334,17 +336,18 @@ export const eventsData = [
     "tags": ["#DigitalInfra", "#CoreTech", "#CloudNative", "#EdgeComputing"],
     "overview": "International Conference on Digital Infrastructure & Core Technologies: examining the foundational layers of modern digital ecosystems, from cloud-native architectures and edge computing to data pipeline engineering and resilient infrastructure design.",
     "themes": [
-      "Cloud-Native Architectures: Designing for the modern cloud.",
-      "Edge Computing: Processing data at the network edge.",
-      "Resilient Infrastructure: Building fail-safe engineering systems."
+      "Cloud-Native Architectures: Designing for the modern cloud, containerization, and orchestration best practices. We will dissect the anatomy of true cloud-native applications, focusing on immutable infrastructure and declarative configuration. The sessions will cover advanced deployment strategies such as canary releases and blue-green deployments to ensure zero-downtime updates. Attendees will gain a thorough understanding of managing stateful applications in highly ephemeral container environments.",
+      "Edge Computing: Processing data at the network edge to reduce latency and improve privacy. Explore the architectural shifts required to push computation closer to the data source. We will analyze the trade-offs between centralized cloud processing and decentralized edge inferencing for real-time AI applications. Topics include securing edge endpoints, optimizing container footprints for low-power devices, and maintaining reliable connectivity in inconsistent network conditions.",
+      "Resilient Infrastructure: Building fail-safe engineering systems, disaster recovery, and high availability. Learn how to design systems that anticipate and gracefully handle catastrophic failures. We will cover the principles of chaos engineering, demonstrating how injecting controlled faults can uncover hidden vulnerabilities in your stack. Discover strategies for achieving multi-region active-active deployments and implementing robust data replication protocols to ensure continuous service availability."
     ],
     "agenda": [
       {
-        "day": "May 24",
+        "day": "Day 1: The Core Infrastructure",
         "sessions": [
-          "09:00 AM - Opening Keynote",
-          "11:00 AM - Technical Session: Cloud-Native Best Practices",
-          "02:00 PM - Workshop: Infrastructure Resilience"
+          "09:00 AM - Opening Keynote: Cloud-Native Evolution",
+          "10:30 AM - Technical Session: Kubernetes at the Edge",
+          "01:00 PM - Deep Dive: Zero-Trust Infrastructure Frameworks",
+          "03:30 PM - Workshop: Building Resilient Data Pipelines"
         ]
       }
     ],
@@ -361,17 +364,18 @@ export const eventsData = [
     "tags": ["#ITInfra", "#CoreIT", "#Cybersecurity", "#Networking"],
     "overview": "Global Conference on Core IT Infrastructure & Technologies: a premier summit uniting industry leaders and researchers to address mission-critical IT infrastructure, cybersecurity frameworks, networking innovations, and the future of enterprise technology stacks.",
     "themes": [
-      "Mission-Critical IT: Safeguarding essential infrastructure.",
-      "Cybersecurity Frameworks: Defending against modern threats.",
-      "Networking Innovations: Next-generation connectivity solutions."
+      "Mission-Critical IT: Safeguarding essential infrastructure and ensuring business continuity. Focus on the core systems that power global enterprises, from high-frequency trading platforms to national grid networks. We will discuss the implementation of redundant power, network, and hardware layers that eliminate single points of failure. The track will also cover comprehensive disaster recovery planning, including RPO and RTO optimization, to ensure rapid restoration of services during unforeseen crises.",
+      "Cybersecurity Frameworks: Defending against modern threats, ransomware mitigation, and incident response. This theme delves into the evolving landscape of state-sponsored attacks and sophisticated cybercriminal syndicates. Learn how to deploy zero-trust network architectures (ZTNA) and implement rigorous identity and access management (IAM) controls. We will also explore automated incident response playbooks and forensic analysis techniques to quickly identify and contain security breaches.",
+      "Networking Innovations: Next-generation connectivity solutions, SD-WAN, and 5G enterprise integration. Discover how software-defined wide area networks are revolutionizing global branch connectivity by abstracting hardware constraints. We will explore the deployment of private 5G networks in manufacturing and logistics to achieve ultra-low latency and high reliability. The sessions will also address the challenges of network slicing and managing Quality of Service (QoS) across highly distributed enterprise footprints."
     ],
     "agenda": [
       {
-        "day": "May 31",
+        "day": "Day 1: Security & Networks",
         "sessions": [
-          "09:00 AM - Opening Keynote",
-          "11:00 AM - Technical Session: Security and Networking",
-          "02:00 PM - Panel: Future of IT Infrastructure"
+          "09:00 AM - Opening Keynote: Securing the Core",
+          "11:00 AM - Technical Session: Advanced Threat Hunting and Intelligence",
+          "01:30 PM - Panel: The Future of Software-Defined Networking",
+          "04:00 PM - Closing Remarks & Tech Showcase"
         ]
       }
     ],
