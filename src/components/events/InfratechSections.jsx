@@ -81,22 +81,46 @@ const DarkCard = ({ title, icon: Icon, image, children, color = palette.teal, st
   </div>
 );
 
+/* ─── Responsive Grid Styles (injected once) ─────────────────── */
+const gridStyleId = 'infratech-responsive-grids';
+if (typeof document !== 'undefined' && !document.getElementById(gridStyleId)) {
+  const styleEl = document.createElement('style');
+  styleEl.id = gridStyleId;
+  styleEl.textContent = `
+    .infra-grid-2 { display:grid; gap:1.25rem; grid-template-columns: repeat(2, 1fr); }
+    .infra-grid-3 { display:grid; gap:1.25rem; grid-template-columns: repeat(3, 1fr); }
+    .infra-grid-4 { display:grid; gap:1.25rem; grid-template-columns: repeat(4, 1fr); }
+    .infra-grid-speakers { display:grid; gap:1rem; grid-template-columns: repeat(3, 1fr); }
+    .infra-grid-committee { display:grid; gap:1rem; grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 900px) {
+      .infra-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .infra-grid-committee { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .infra-grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .infra-grid-speakers { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .infra-grid-2 { grid-template-columns: 1fr; }
+      .infra-grid-3 { grid-template-columns: 1fr; }
+      .infra-grid-4 { grid-template-columns: 1fr; }
+      .infra-grid-speakers { grid-template-columns: 1fr; }
+      .infra-grid-committee { grid-template-columns: 1fr; }
+    }
+  `;
+  document.head.appendChild(styleEl);
+}
+
 const Grid3 = ({ children }) => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
-    {children}
-  </div>
+  <div className="infra-grid-3">{children}</div>
 );
 
 const Grid4 = ({ children }) => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem' }}>
-    {children}
-  </div>
+  <div className="infra-grid-4">{children}</div>
 );
 
 const Grid2 = ({ children }) => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.25rem' }}>
-    {children}
-  </div>
+  <div className="infra-grid-2">{children}</div>
 );
 
 const Divider = () => (
@@ -129,7 +153,7 @@ const InfratechSections = ({ speakers = [], speakersTitle = 'Featured Speakers',
         <>
           <section>
             <SectionHeading icon={Mic} label="Keynote Speakers" color={palette.amber} />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+            <div className="infra-grid-speakers">
               {keynoteSpeakers.map((sp, i) => (
                 <div key={i} style={{
                   display: 'flex', alignItems: 'center', gap: '1rem',
@@ -177,7 +201,7 @@ const InfratechSections = ({ speakers = [], speakersTitle = 'Featured Speakers',
         <>
           <section>
             <SectionHeading icon={Users} label={speakersTitle} color={palette.purple} />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+            <div className="infra-grid-committee">
               {speakers.map((sp, i) => (
                 <div key={i} style={{
                   display: 'flex', alignItems: 'center', gap: '1rem',
