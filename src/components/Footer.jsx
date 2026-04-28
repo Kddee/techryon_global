@@ -110,13 +110,15 @@ const Footer = () => {
                   color: t.subtle,
                   transition: 'color 0.2s',
                   display: 'flex',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  gap: '0.6rem'
                 }}
                 onMouseEnter={e => e.currentTarget.style.color = t.accent}
                 onMouseLeave={e => e.currentTarget.style.color = t.subtle}
                 aria-label="Email Us"
               >
-                <Mail size={26} />
+                <Mail size={22} />
+                <span style={{ fontSize: '0.95rem', fontWeight: 500, letterSpacing: '0.02em' }}>inquiries@techryonglobal.com</span>
               </a>
             </div>
           </div>

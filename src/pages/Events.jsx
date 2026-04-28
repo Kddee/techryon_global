@@ -117,9 +117,9 @@ const Events = () => {
             {[
               {
                 id: 'evt_008',
-                title: 'NEXAICON 2026',
-                date: 'May 10, 2026',
-                dateShort: { month: 'MAY', day: '10' },
+                title: 'INFRATECH WORLD 2026: Global Conference on IT Infrastructure & Enterprise Technologies',
+                date: 'June 14, 2026',
+                dateShort: { month: 'JUN', day: '14' },
                 location: 'Virtual',
                 format: 'Virtual',
                 accent: 'rgba(0,220,180,0.85)',

@@ -272,10 +272,10 @@ export const eventsData = [
   },
   {
     "id": "evt_008",
-    "title": "NEXAICON 2026",
+    "title": "INFRATECH WORLD 2026: Global Conference on IT Infrastructure & Enterprise Technologies",
     "format": "Virtual",
     "location": "Virtual",
-    "date": "May 10, 2026",
+    "date": "June 14, 2026",
     "category": "Technical Summit",
     "tags": ["#AI", "#Computing", "#NexusTech", "#Research"],
     "overview": "International Conference on AI, Computing & Nexus Technologies: bridging the frontiers of artificial intelligence, next-generation computing paradigms, and interconnected technology ecosystems through cutting-edge research presentations and global collaboration.",
@@ -295,7 +295,28 @@ export const eventsData = [
         ]
       }
     ],
-    "speakers": [],
+    "keynoteSpeakers": [
+      { "name": "Olukemi Ajibike Aluko", "role": "Professor", "organization": "Obafemi Awolowo University", "country": "Nigeria" },
+      { "name": "Emerald Abena Amponsah Baffour", "role": "CEO", "organization": "G-Fash Networks", "country": "Ghana" },
+      { "name": "Okopi Fredrick", "role": "CEO", "organization": "Unique UJ SERVICE LIMITES", "country": "Nigeria" },
+      { "name": "Saleem Abu Jaber", "role": "Academic Advisor Head, Department of Arabic Language and Literature The Faculty of Education and Leadership", "organization": "Achva Academic College", "country": "Israel" }
+
+    ],
+    "speakersTitle": "Our Committee Members",
+    "speakers": [
+      { "name": "Alfred Kwame Mensah", "role": "Managing Director", "organization": "Global Clinical Experience Inc", "country": "United States" },
+      { "name": "Dr. Zoha Rahman", "role": "Founder & Country Director", "country": "USA" },
+      { "name": "Dr. Dina A. Alkhodary", "role": "Associate Professor", "country": "Jordan" },
+      { "name": "Dr. Firas Zeidan", "role": "Researcher & Professor", "country": "Lebanon" },
+      { "name": "Dr. Tiansheng Yang", "role": "University of South Wales", "country": "UK" },
+      { "name": "Mouhsine Ait El Mouden", "role": "Researcher", "country": "Morocco" },
+      { "name": "Sam Lawe", "role": "Infrastructure Manager", "country": "New Zealand" },
+      { "name": "Meryem Gurel", "role": "Founder", "country": "Turkey" },
+      { "name": "Dr. Ruth Abiola Adimula", "role": "Associate Professor", "country": "Nigeria" },
+      { "name": "Lawrence Mazaki Mashati", "role": "Community Development Professional, International Missionary for Christ Kenya (IMFC)", "country": "Kenya" },
+      { "name": "Dr. Yulia Kryvenko", "role": "Assistant Professor Istanbul Sabahattin Zaim University", "country": "France" }
+
+    ],
     "pricing": []
   },
   {

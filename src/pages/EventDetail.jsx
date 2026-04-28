@@ -6,6 +6,7 @@ import {
   Users, BookOpen, Clock, ChevronRight
 } from 'lucide-react';
 import { eventsData } from '../data/eventsData';
+import InfratechSections from '../components/events/InfratechSections';
 
 /* ─── Visual Mapping ───────────────────────────────────────── */
 const visualMap = {
@@ -150,144 +151,172 @@ const EventDetail = () => {
       {/* ── Main Content ── */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2.5rem 6rem', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
 
-        {/* Overview */}
-        <section>
-          <SectionHeading icon={BookOpen} label="Event Overview" accent={accentSolid} />
-          <p style={{ fontSize: '1rem', lineHeight: 1.85, color: '#9090a0' }}>{ev.overview}</p>
-        </section>
-
-        <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)' }} />
-
-        {/* Key Themes */}
-        {ev.themes && ev.themes.length > 0 && (
+        {/* ── INFRATECH WORLD 2026 custom sections ── */}
+        {ev.id === 'evt_008' ? (
           <>
-            <section>
-              <SectionHeading icon={ChevronRight} label="Key Themes & Tracks" accent={accentSolid} />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {ev.themes.map((t, i) => {
-                  const titleStr = typeof t === 'string' ? t.split(':')[0] : t.title;
-                  const bodyStr  = typeof t === 'string' ? t.split(':').slice(1).join(':') : t.body;
-                  return (
-                    <div key={i} style={{
-                      background: 'rgba(255,255,255,0.025)',
-                      border: `1px solid ${visual.accent.replace('0.85', '0.12')}`,
-                      borderLeft: `3px solid ${visual.accent.replace('0.85', '0.7')}`,
-                      borderRadius: '0.875rem',
-                      padding: '1rem 1.25rem',
-                    }}>
-                      <div style={{ fontSize: '0.88rem', fontWeight: 700, color: '#e8e8ee', marginBottom: '0.35rem' }}>{titleStr}</div>
-                      <div style={{ fontSize: '0.88rem', color: '#8a8a9a', lineHeight: 1.7 }}>{bodyStr}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-            <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)' }} />
-          </>
-        )}
+            <InfratechSections speakers={ev.speakers || []} speakersTitle={ev.speakersTitle || 'Featured Speakers'} keynoteSpeakers={ev.keynoteSpeakers || []} />
 
-        {/* Agenda */}
-        {ev.agenda && ev.agenda.length > 0 && (
-          <>
+            {/* Tags */}
             <section>
-              <SectionHeading icon={Clock} label="Agenda Highlights" accent={accentSolid} />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
-                {ev.agenda.map((block, bi) => (
-                  <div key={bi}>
-                    <div style={{
-                      fontSize: '0.78rem', fontWeight: 700,
-                      letterSpacing: '0.08em', textTransform: 'uppercase',
-                      color: accentSolid,
-                      marginBottom: '0.75rem',
-                      paddingBottom: '0.5rem',
-                      borderBottom: `1px solid ${visual.accent.replace('0.85', '0.2')}`,
-                    }}>
-                      {block.day}
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                      {block.sessions.map((s, si) => {
-                        const [time, ...rest] = s.split(/\s*[-—]\s*/);
-                        return (
-                          <div key={si} style={{
-                            display: 'flex', gap: '1rem', alignItems: 'flex-start',
-                            padding: '0.75rem 1rem',
-                            borderRadius: '0.75rem',
-                            background: 'rgba(255,255,255,0.02)',
-                            border: '1px solid rgba(255,255,255,0.04)',
-                          }}>
-                            <span style={{
-                              fontSize: '0.78rem', fontWeight: 700, color: '#d2aa64',
-                              minWidth: '6rem', flexShrink: 0, paddingTop: '0.05rem',
-                            }}>{time}</span>
-                            <span style={{ fontSize: '0.9rem', color: '#a0a0b0', lineHeight: 1.55 }}>
-                              {rest.join(' - ')}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {ev.tags.map(tag => (
+                  <span key={tag} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
+                    fontSize: '0.78rem', fontWeight: 600,
+                    padding: '0.3rem 0.8rem', borderRadius: '2rem',
+                    background: 'rgba(210,170,100,0.07)',
+                    border: '1px solid rgba(210,170,100,0.18)',
+                    color: '#a09070',
+                  }}>
+                    <Tag size={11} />{tag}
+                  </span>
                 ))}
               </div>
             </section>
+          </>
+        ) : (
+          <>
+            {/* Overview */}
+            <section>
+              <SectionHeading icon={BookOpen} label="Event Overview" accent={accentSolid} />
+              <p style={{ fontSize: '1rem', lineHeight: 1.85, color: '#9090a0' }}>{ev.overview}</p>
+            </section>
+
             <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)' }} />
+
+            {/* Key Themes */}
+            {ev.themes && ev.themes.length > 0 && (
+              <>
+                <section>
+                  <SectionHeading icon={ChevronRight} label="Key Themes & Tracks" accent={accentSolid} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    {ev.themes.map((t, i) => {
+                      const titleStr = typeof t === 'string' ? t.split(':')[0] : t.title;
+                      const bodyStr  = typeof t === 'string' ? t.split(':').slice(1).join(':') : t.body;
+                      return (
+                        <div key={i} style={{
+                          background: 'rgba(255,255,255,0.025)',
+                          border: `1px solid ${visual.accent.replace('0.85', '0.12')}`,
+                          borderLeft: `3px solid ${visual.accent.replace('0.85', '0.7')}`,
+                          borderRadius: '0.875rem',
+                          padding: '1rem 1.25rem',
+                        }}>
+                          <div style={{ fontSize: '0.88rem', fontWeight: 700, color: '#e8e8ee', marginBottom: '0.35rem' }}>{titleStr}</div>
+                          <div style={{ fontSize: '0.88rem', color: '#8a8a9a', lineHeight: 1.7 }}>{bodyStr}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
+                <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)' }} />
+              </>
+            )}
+
+            {/* Agenda */}
+            {ev.agenda && ev.agenda.length > 0 && (
+              <>
+                <section>
+                  <SectionHeading icon={Clock} label="Agenda Highlights" accent={accentSolid} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+                    {ev.agenda.map((block, bi) => (
+                      <div key={bi}>
+                        <div style={{
+                          fontSize: '0.78rem', fontWeight: 700,
+                          letterSpacing: '0.08em', textTransform: 'uppercase',
+                          color: accentSolid,
+                          marginBottom: '0.75rem',
+                          paddingBottom: '0.5rem',
+                          borderBottom: `1px solid ${visual.accent.replace('0.85', '0.2')}`,
+                        }}>
+                          {block.day}
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                          {block.sessions.map((s, si) => {
+                            const [time, ...rest] = s.split(/\s*[-—]\s*/);
+                            return (
+                              <div key={si} style={{
+                                display: 'flex', gap: '1rem', alignItems: 'flex-start',
+                                padding: '0.75rem 1rem',
+                                borderRadius: '0.75rem',
+                                background: 'rgba(255,255,255,0.02)',
+                                border: '1px solid rgba(255,255,255,0.04)',
+                              }}>
+                                <span style={{
+                                  fontSize: '0.78rem', fontWeight: 700, color: '#d2aa64',
+                                  minWidth: '6rem', flexShrink: 0, paddingTop: '0.05rem',
+                                }}>{time}</span>
+                                <span style={{ fontSize: '0.9rem', color: '#a0a0b0', lineHeight: 1.55 }}>
+                                  {rest.join(' - ')}
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+                <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)' }} />
+              </>
+            )}
+
+            {/* Featured Speakers */}
+            {ev.speakers && ev.speakers.length > 0 && (
+              <section>
+                <SectionHeading icon={Users} label={ev.speakersTitle || "Featured Speakers"} accent={accentSolid} />
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
+                  {ev.speakers.map((sp, i) => (
+                    <div key={i} style={{
+                      display: 'flex', alignItems: 'center', gap: '1rem',
+                      padding: '1rem 1.25rem',
+                      background: 'rgba(255,255,255,0.025)',
+                      border: '1px solid rgba(255,255,255,0.07)',
+                      borderRadius: '1rem',
+                    }}>
+                      <div style={{
+                        width: '3rem', height: '3rem', borderRadius: '50%',
+                        background: visual.glow,
+                        border: `1px solid ${visual.accent.replace('0.85', '0.3')}`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: '0.8rem', fontWeight: 700,
+                        color: accentSolid,
+                        flexShrink: 0, letterSpacing: '0.04em',
+                      }}>
+                        {sp.name.split(' ').filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join('')}
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '0.92rem', fontWeight: 600, color: '#e8e8ee', lineHeight: 1.3 }}>{sp.name}</div>
+                        <div style={{ fontSize: '0.78rem', color: '#8a8a9a', marginTop: '0.2rem' }}>{sp.role}</div>
+                        {sp.country && sp.country !== 'N/A' && <div style={{ fontSize: '0.75rem', color: '#6a6a7a', marginTop: '0.1rem' }}>{sp.country}</div>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ fontSize: '0.82rem', color: '#7a7a8a', marginTop: '0.75rem', fontStyle: 'italic', paddingLeft: '0.5rem' }}>
+                  Plus 20+ more industry leaders and core contributors.
+                </div>
+              </section>
+            )}
+
+            {/* Tags */}
+            <section>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {ev.tags.map(tag => (
+                  <span key={tag} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
+                    fontSize: '0.78rem', fontWeight: 600,
+                    padding: '0.3rem 0.8rem', borderRadius: '2rem',
+                    background: 'rgba(210,170,100,0.07)',
+                    border: '1px solid rgba(210,170,100,0.18)',
+                    color: '#a09070',
+                  }}>
+                    <Tag size={11} />{tag}
+                  </span>
+                ))}
+              </div>
+            </section>
           </>
         )}
-
-        {/* Featured Speakers */}
-        {ev.speakers && ev.speakers.length > 0 && (
-          <section>
-            <SectionHeading icon={Users} label="Featured Speakers" accent={accentSolid} />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
-              {ev.speakers.map((sp, i) => (
-                <div key={i} style={{
-                  display: 'flex', alignItems: 'center', gap: '1rem',
-                  padding: '1rem 1.25rem',
-                  background: 'rgba(255,255,255,0.025)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '1rem',
-                }}>
-                  <div style={{
-                    width: '3rem', height: '3rem', borderRadius: '50%',
-                    background: visual.glow,
-                    border: `1px solid ${visual.accent.replace('0.85', '0.3')}`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '0.8rem', fontWeight: 700,
-                    color: accentSolid,
-                    flexShrink: 0, letterSpacing: '0.04em',
-                  }}>
-                    {sp.name.split(' ').filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join('')}
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.92rem', fontWeight: 600, color: '#e8e8ee', lineHeight: 1.3 }}>{sp.name}</div>
-                    <div style={{ fontSize: '0.78rem', color: '#8a8a9a', marginTop: '0.2rem' }}>{sp.role}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ fontSize: '0.82rem', color: '#7a7a8a', marginTop: '0.75rem', fontStyle: 'italic', paddingLeft: '0.5rem' }}>
-              Plus 20+ more industry leaders and core contributors.
-            </div>
-          </section>
-        )}
-
-        {/* Tags */}
-        <section>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-            {ev.tags.map(tag => (
-              <span key={tag} style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
-                fontSize: '0.78rem', fontWeight: 600,
-                padding: '0.3rem 0.8rem', borderRadius: '2rem',
-                background: 'rgba(210,170,100,0.07)',
-                border: '1px solid rgba(210,170,100,0.18)',
-                color: '#a09070',
-              }}>
-                <Tag size={11} />{tag}
-              </span>
-            ))}
-          </div>
-        </section>
 
       </div>
     </div>
