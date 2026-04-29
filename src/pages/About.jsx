@@ -29,35 +29,29 @@ const About = () => {
 
   const team = [
     {
-      name: "Lawrence Mazaki Mashati",
+      name: "Dr. Aida Mehrad",
       role: "Executive Director",
-      /* bio: "Community Development Professional, International Missionary for Christ Kenya (IMFC) Nairobi, Kenya",*/
+      glow: "rgba(210,170,100,0.15)",
+      image: drAidaPhoto
+    },
+    {
+      name: "Lawrence Mazaki Mashati",
+      role: "General Director",
       glow: "rgba(0,240,255,0.15)",
       image: LMphoto
     },
     {
       name: "Marghescu Cristina-Florentina",
-      role: "Board Member",
+      role: "Independent Director",
       glow: "rgba(139,92,246,0.15)",
       image: CFphoto
     },
     {
-      name: "Dr. Aida Mehrad",
-      role: "Advisory Board Member",
-      /*bio: "Former Director of Distributed Systems at NeuralCore, specializing in highly concurrent cloud infrastructure.",
-      */
-      glow: "rgba(210,170,100,0.15)",
-      image: drAidaPhoto
-    },
-    {
       name: "Dr. Marek Wasiluk",
-      role: "Advisory Board Member",
-      /* bio: "Zero-day vulnerability researcher and architect of predictive threat modeling frameworks.",
-      */
+      role: "Board Member",
       glow: "rgba(236,72,153,0.15)",
       image: MWphoto
     }
-
   ];
 
   return (
