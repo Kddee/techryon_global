@@ -1,6 +1,15 @@
+/* ── Helper: generate a URL-friendly slug from a title ── */
+const toSlug = (title) =>
+  title
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
 export const eventsData = [
   {
     "id": "evt_001",
+    "slug": "global-ai-and-data-summit-2025",
     "title": "The Global AI & Data Summit 2025",
     "format": "Hybrid",
     "location": "Sandton Convention Centre, Johannesburg, South Africa & Virtual",
@@ -52,6 +61,7 @@ export const eventsData = [
   },
   {
     "id": "evt_002",
+    "slug": "reactx-open-source-conference",
     "title": "ReactX Open Source Conference",
     "format": "Hybrid",
     "location": "Estrel Congress Center, Berlin, Germany & Virtual",
@@ -92,6 +102,7 @@ export const eventsData = [
   },
   {
     "id": "evt_003",
+    "slug": "cloudnative-con-asia",
     "title": "CloudNative Con Asia",
     "format": "Hybrid",
     "location": "Tokyo International Forum, Tokyo, Japan & Virtual",
@@ -132,6 +143,7 @@ export const eventsData = [
   },
   {
     "id": "evt_004",
+    "slug": "zero-day-defense-summit",
     "title": "Zero Day Defense Summit",
     "format": "Hybrid",
     "location": "Metro Toronto Convention Centre, Toronto, Canada & Virtual",
@@ -167,6 +179,7 @@ export const eventsData = [
   },
   {
     "id": "evt_005",
+    "slug": "fintech-protocol-conference",
     "title": "FinTech Protocol Conference",
     "format": "Hybrid",
     "location": "Marina Bay Sands Expo, Singapore & Virtual",
@@ -202,6 +215,7 @@ export const eventsData = [
   },
   {
     "id": "evt_006",
+    "slug": "mobile-application-architecture-summit",
     "title": "Mobile Application Architecture Summit",
     "format": "Hybrid",
     "location": "ExCeL London, UK & Virtual",
@@ -237,6 +251,7 @@ export const eventsData = [
   },
   {
     "id": "evt_007",
+    "slug": "quantum-horizon-summit",
     "title": "Quantum Horizon Summit",
     "format": "Hybrid",
     "location": "CTICC, Cape Town, South Africa & Virtual",
@@ -272,6 +287,7 @@ export const eventsData = [
   },
   {
     "id": "evt_008",
+    "slug": "infratech-world-2026",
     "title": "INFRATECH WORLD 2026: Global Conference on IT Infrastructure & Enterprise Technologies",
     "format": "Virtual",
     "location": "Virtual",
@@ -321,6 +337,7 @@ export const eventsData = [
   },
   {
     "id": "evt_009",
+    "slug": "technexus-global-conference-2026",
     "title": "TECHNEXUS GLOBAL CONFERENCE 2026 (TGC-26)",
     "format": "Virtual",
     "location": "Virtual",
@@ -349,6 +366,7 @@ export const eventsData = [
   },
   {
     "id": "evt_010",
+    "slug": "digitcore-conference-2026",
     "title": "DIGITCORE CONFERENCE 2026 (DCC-26)",
     "format": "Virtual",
     "location": "Virtual",
@@ -377,6 +395,7 @@ export const eventsData = [
   },
   {
     "id": "evt_011",
+    "slug": "coretech-summit-2026",
     "title": "CORETECH SUMMIT 2026",
     "format": "Virtual",
     "location": "Virtual",

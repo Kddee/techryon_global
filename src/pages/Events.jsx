@@ -117,6 +117,7 @@ const Events = () => {
             {[
               {
                 id: 'evt_008',
+                slug: 'infratech-world-2026',
                 title: 'INFRATECH WORLD 2026: Global Conference on IT Infrastructure & Enterprise Technologies',
                 date: 'June 14, 2026',
                 dateShort: { month: 'JUN', day: '14' },
@@ -129,6 +130,7 @@ const Events = () => {
               },
               {
                 id: 'evt_009',
+                slug: 'technexus-global-conference-2026',
                 title: 'TECHNEXUS GLOBAL CONFERENCE 2026 (TGC-26)',
                 date: 'May 17, 2026',
                 dateShort: { month: 'MAY', day: '17' },
@@ -141,6 +143,7 @@ const Events = () => {
               },
               {
                 id: 'evt_010',
+                slug: 'digitcore-conference-2026',
                 title: 'DIGITCORE CONFERENCE 2026 (DCC-26)',
                 date: 'May 24, 2026',
                 dateShort: { month: 'MAY', day: '24' },
@@ -153,6 +156,7 @@ const Events = () => {
               },
               {
                 id: 'evt_011',
+                slug: 'coretech-summit-2026',
                 title: 'CORETECH SUMMIT 2026',
                 date: 'May 31, 2026',
                 dateShort: { month: 'MAY', day: '31' },
@@ -164,7 +168,7 @@ const Events = () => {
                 tags: ['#ITInfra', '#CoreIT', '#Cybersecurity', '#Networking'],
               },
             ].map((upcoming, idx) => (
-              <UpcomingEventCard key={idx} event={upcoming} idx={idx} onLearnMore={() => navigate(`/events/${upcoming.id}`)} />
+              <UpcomingEventCard key={idx} event={upcoming} idx={idx} onLearnMore={() => navigate(`/events/${upcoming.slug}`)} />
             ))}
           </div>
         </div>
@@ -198,7 +202,7 @@ const Events = () => {
                 idx={idx}
                 IconComp={IconComp}
                 catStyle={catStyle}
-                onLearnMore={() => navigate(`/events/${ev.id}`)}
+                onLearnMore={() => navigate(`/events/${ev.slug || ev.id}`)}
               />
             );
           })}

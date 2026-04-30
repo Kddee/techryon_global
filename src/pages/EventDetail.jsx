@@ -34,10 +34,10 @@ const SectionHeading = ({ icon: Icon, label, accent }) => (
 
 /* ─── Event Detail Page ────────────────────────────────────── */
 const EventDetail = () => {
-  const { id } = useParams();
+  const { id: slug } = useParams();
   const navigate = useNavigate();
 
-  const ev = eventsData.find(e => e.id === id);
+  const ev = eventsData.find(e => e.slug === slug || e.id === slug);
 
   if (!ev) {
     return (
