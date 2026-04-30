@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   Brain, Code2, Cloud, ShieldCheck, Landmark, Smartphone, Atom,
@@ -58,6 +58,12 @@ const EventDetail = () => {
   const catStyle = categoryStyle[ev.category] || categoryStyle['Technical Conference'];
   const IconComp = visual.icon;
   const accentSolid = visual.accent.replace('0.85', '1');
+
+  /* ── Set browser tab title to the event name ── */
+  useEffect(() => {
+    document.title = `${ev.title} | Techryon Global`;
+    return () => { document.title = 'Techryon Global'; };
+  }, [ev.title]);
 
   return (
     <div
