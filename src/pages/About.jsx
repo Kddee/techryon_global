@@ -2,7 +2,7 @@ import React from 'react';
 import { Cpu, ShieldCheck, Box, User } from 'lucide-react';
 import drAidaPhoto from '../assets/aida-mehrad.jpeg';
 import LMphoto from '../assets/LM.jpeg';
-import MWphoto from '../assets/MW.jpeg';
+
 import CFphoto from '../assets/cf.jpeg';
 
 const About = () => {
@@ -45,12 +45,6 @@ const About = () => {
       role: "Independent Director",
       glow: "rgba(139,92,246,0.15)",
       image: CFphoto
-    },
-    {
-      name: "Dr. Marek Wasiluk",
-      role: "Board Member",
-      glow: "rgba(236,72,153,0.15)",
-      image: MWphoto
     }
   ];
 
